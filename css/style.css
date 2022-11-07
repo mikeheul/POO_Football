@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+main {
+    padding: 30px;
+}
+
+ul {
+    list-style: none;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 0;
+}
+
+.cards .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 25%;
+    flex-basis: 24%;
+    padding: 50px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    aspect-ratio: 1 / 1;
+    color: #fff;
+    transition: .5s;
+}
+.cards .card:hover {
+    transform: translateY(-10px);
+}
+.cards .card .heading h1 {
+    font-size: 1.5em;
+    line-height: 1em;
+    margin: 0 0 10px 0;
+}
+.cards .card .heading p {
+    font-size: 1em;
+    color: rgb(223, 223, 223);
+    margin: 10px 0;
+}
+.cards .card ul {
+    margin-top: 1.5em;
+}
+    
+.card.pays { background: rgb(198, 102, 102); }
+.card.equipe { background: rgb(94, 131, 178); }
+.card.joueur { background: rgb(90, 175, 95); }
