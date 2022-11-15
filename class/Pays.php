@@ -97,6 +97,9 @@ class Pays {
     public function showEquipes() 
     {
         $result = "<div class='heading'><h1>$this</h1></div><ul>";
+        usort($this->equipes, function($a, $b){
+            return $a->getNomEquipe() > $b->getNomEquipe();
+        });
         foreach ($this->equipes as $equipe) {
             $result .= "<li>$equipe</li>";
         }

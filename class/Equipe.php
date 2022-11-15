@@ -82,6 +82,9 @@ class Equipe {
 
     public function showJoueurs() {
         $result = "<div class='heading'><h1>$this</h1><p>".$this->pays." - ".$this->dateCreation->format("Y")."</p></div><ul>";
+        usort($this->carrieres, function($a, $b){
+            return $a->getAnneeDebut() < $b->getAnneeDebut();
+        });
         foreach($this->carrieres as $c) {
             $result .= "<li>".$c->getJoueur()." (".$c->getAnneeDebut().")</li>";
         }
