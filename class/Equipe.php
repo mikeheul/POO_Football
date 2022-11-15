@@ -82,6 +82,7 @@ class Equipe {
 
     public function showJoueurs() {
         $result = "<div class='heading'><h1>$this</h1><p>".$this->pays." - ".$this->dateCreation->format("Y")."</p></div><ul>";
+        // trier l'historique des joueurs de l'équipe par date d'entrée dans le club décroissante
         usort($this->carrieres, function($a, $b){
             return $a->getAnneeDebut() < $b->getAnneeDebut();
         });

@@ -133,6 +133,7 @@ class Joueur {
     public function showCarriere()
     {
         $result = "<div class='heading'><h1>$this</h1><p>".$this->pays." - ".$this->getAge()."</p></div><ul>";
+        // trier le parcours du joueur par date d'entrée dans le club décroissante
         usort($this->carrieres, function($a, $b){
             return $a->getAnneeDebut() < $b->getAnneeDebut();
         });

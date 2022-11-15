@@ -97,6 +97,7 @@ class Pays {
     public function showEquipes() 
     {
         $result = "<div class='heading'><h1>$this</h1></div><ul>";
+        // trier les équipes par ordre alphabétique
         usort($this->equipes, function($a, $b){
             return $a->getNomEquipe() > $b->getNomEquipe();
         });
