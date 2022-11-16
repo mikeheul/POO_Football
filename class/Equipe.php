@@ -6,6 +6,7 @@ class Equipe {
     private string $nomEquipe;
     private Pays $pays;	
     private DateTime $dateCreation;
+    // historique des joueurs du club (joueur, club, année de début)
     private array $carrieres;
 
     // Constructeur
@@ -21,7 +22,7 @@ class Equipe {
     /**
      * Get the value of nomEquipe
      */ 
-    public function getNomEquipe()
+    public function getNomEquipe(): string
     {
         return $this->nomEquipe;
     }
@@ -40,7 +41,7 @@ class Equipe {
     /**
      * Get the value of pays
      */ 
-    public function getPays()
+    public function getPays(): Pays
     {
         return $this->pays;
     }
@@ -59,7 +60,7 @@ class Equipe {
     /**
      * Get the value of carrieres
      */ 
-    public function getCarrieres()
+    public function getCarrieres(): array
     {
         return $this->carrieres;
     }
@@ -80,7 +81,8 @@ class Equipe {
         $this->carrieres[] = $carriere;
     }
 
-    public function showJoueurs() {
+    public function showJoueurs(): string
+    {
         $result = "<div class='heading'><h1>$this</h1><p>".$this->pays." - ".$this->dateCreation->format("Y")."</p></div><ul>";
         // trier l'historique des joueurs de l'équipe par date d'entrée dans le club décroissante
         usort($this->carrieres, function($a, $b){
@@ -96,7 +98,7 @@ class Equipe {
      /**
      * Get the value of dateCreation
      */ 
-    public function getDateCreation()
+    public function getDateCreation(): DateTime
     {
         return $this->dateCreation;
     }

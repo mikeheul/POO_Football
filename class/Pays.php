@@ -17,7 +17,7 @@ class Pays {
     /**
      * Get the value of nomPays
      */ 
-    public function getNomPays()
+    public function getNomPays(): string
     {
         return $this->nomPays;
     }
@@ -37,7 +37,7 @@ class Pays {
     /**
      * Get the value of equipes
      */ 
-    public function getEquipes()
+    public function getEquipes(): array
     {
         return $this->equipes;
     }
@@ -57,7 +57,7 @@ class Pays {
     /**
      * Get the value of joueurs
      */ 
-    public function getJoueurs()
+    public function getJoueurs(): array
     {
         return $this->joueurs;
     }
@@ -84,7 +84,7 @@ class Pays {
         $this->equipes[] = $equipe;
     }
 
-    public function showJoueurs() 
+    public function showJoueurs(): string
     {
         $result = "<div class='heading'><h1>$this</h1></div><ul>";
         foreach ($this->joueurs as $joueur) {
@@ -94,7 +94,7 @@ class Pays {
         return $result;
     }
 
-    public function showEquipes() 
+    public function showEquipes(): string
     {
         $result = "<div class='heading'><h1>$this</h1></div><ul>";
         // trier les équipes par ordre alphabétique

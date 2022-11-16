@@ -7,6 +7,7 @@ class Joueur {
     private string $nom;
     private DateTime $dateNaissance;
     private Pays $pays;
+    // parcours d'un joueur (joueur, club, année de début)
     private array $carrieres;
 
     // Constructeur
@@ -23,7 +24,7 @@ class Joueur {
     /**
      * Get the value of prenom
      */ 
-    public function getPrenom()
+    public function getPrenom(): string
     {
         return $this->prenom;
     }
@@ -43,7 +44,7 @@ class Joueur {
     /**
      * Get the value of nom
      */ 
-    public function getNom()
+    public function getNom(): string
     {
         return $this->nom;
     }
@@ -63,7 +64,7 @@ class Joueur {
     /**
      * Get the value of dateNaissance
      */ 
-    public function getDateNaissance()
+    public function getDateNaissance(): DateTime
     {
         return $this->dateNaissance;
     }
@@ -80,7 +81,7 @@ class Joueur {
         return $this;
     }
 
-    public function getAge()
+    public function getAge(): string
     {
         return date_create("now")->diff($this->dateNaissance)->format('%Y ans');
     }
@@ -88,7 +89,7 @@ class Joueur {
     /**
      * Get the value of pays
      */ 
-    public function getPays()
+    public function getPays(): Pays
     {
         return $this->pays;
     }
@@ -108,7 +109,7 @@ class Joueur {
     /**
      * Get the value of equipes
      */ 
-    public function getCarrieres()
+    public function getCarrieres(): array
     {
         return $this->carrieres;
     }
@@ -130,7 +131,7 @@ class Joueur {
         $this->carrieres[] = $carriere;
     }
 
-    public function showCarriere()
+    public function showCarriere(): string
     {
         $result = "<div class='heading'><h1>$this</h1><p>".$this->pays." - ".$this->getAge()."</p></div><ul>";
         // trier le parcours du joueur par date d'entrée dans le club décroissante

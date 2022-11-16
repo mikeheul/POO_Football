@@ -20,7 +20,7 @@ class Carriere {
     /**
      * Get the value of joueur
      */ 
-    public function getJoueur()
+    public function getJoueur(): Joueur
     {
         return $this->joueur;
     }
@@ -40,7 +40,7 @@ class Carriere {
     /**
      * Get the value of equipe
      */ 
-    public function getEquipe()
+    public function getEquipe(): Equipe
     {
         return $this->equipe;
     }
@@ -60,7 +60,7 @@ class Carriere {
     /**
      * Get the value of anneeDebut
      */ 
-    public function getAnneeDebut()
+    public function getAnneeDebut(): int
     {
         return $this->anneeDebut;
     }
