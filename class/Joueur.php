@@ -136,7 +136,7 @@ class Joueur {
         $result = "<div class='heading'><h1>$this</h1><p>".$this->pays." - ".$this->getAge()."</p></div><ul>";
         // trier le parcours du joueur par date d'entrée dans le club décroissante
         usort($this->carrieres, function($a, $b){
-            return $a->getAnneeDebut() < $b->getAnneeDebut();
+            return (int)($a->getAnneeDebut() < $b->getAnneeDebut());
         });
         foreach($this->carrieres as $c) {
             $result .= "<li>".$c->getEquipe()." (".$c->getAnneeDebut().")</li>";
